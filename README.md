@@ -20,6 +20,7 @@
 此字串尋找演算法優點在於，欲搜尋的詞在不匹配時本身就包含足夠的資訊來確定下一個匹配可能的開始位置，利用這一特性以避免重新檢查先前配對的字元。<br>
 
 以下是"失配函式"所需預先建立的表<br>
+
 $f(j)=\left\{ 
 \begin{array}{l}
   -1 \\ 
@@ -32,6 +33,7 @@ $f(j)=\left\{
   if\ there\ is\ no\ k\ satisfying\ the\ above
 \end{array}
 \right. \\$
+<br>
 $f^1(j)=f(j)\ and\ f^m(j)= f(f^{m-1}(j))$
 
 範例:<br>
