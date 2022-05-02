@@ -20,8 +20,7 @@
 此字串尋找演算法優點在於，欲搜尋的詞在不匹配時本身就包含足夠的資訊來確定下一個匹配可能的開始位置，利用這一特性以避免重新檢查先前配對的字元。<br>
 
 以下是"失配函式"所需預先建立的表<br>
-$
-f(j)=\left\{ 
+$f(j)=\left\{ 
 \begin{array}{l}
   -1 \\ 
   f^m(j-1)+1 \\ 
@@ -32,11 +31,8 @@ f(j)=\left\{
   where\ m\ is\ the\ least\ integer\ k\ for\ which\ p_{f^k(j-1)+1}=p_j\\ 
   if\ there\ is\ no\ k\ satisfying\ the\ above
 \end{array}
-\right. \\
-$
-$
-f^1(j)=f(j)\ and\ f^m(j)= f(f^{m-1}(j))
-$
+\right. \\$
+$f^1(j)=f(j)\ and\ f^m(j)= f(f^{m-1}(j))$
 
 範例:<br>
 haystack為主文字串，needle為匹配字串<br>
@@ -49,30 +45,30 @@ needle[i] | A | B | C | D | A | B | D
 F[i] | -1 | 0 | 0 | 0 | 0 | 1 | 2
 
 第一次比對(i=0) (沒問題)<br>
-![alt text](./Resource/#28/1.png)<br>
+![error](./Resource/%2328/1.png)<br>
 
 第二次比對(i=1) (沒問題)<br>
-![alt text](./Resource/#28/2.png)<br>
+![error](./Resource/%2328/2.png)<br>
 
 ...到第六次比對(i=5) (沒問題)<br>
-![alt text](./Resource/#28/3.png)<br>
+![error](./Resource/%2328/3.png)<br>
 
 第七次比對(i=6) (配對不正確) 
-![alt text](./Resource/#28/4.png)
+![error](./Resource/%2328/4.png)
 這邊很關鍵，錯了該怎麼辦<br>
 如果先依照原始做法會如下圖，從(i=1)開始出發比對<br>
-![alt text](./Resource/#28/5.png)<br>
+![error](./Resource/%2328/5.png)<br>
 但這樣不覺得其實沒必要嗎，其實已經有某些資訊提供了，仔細觀察下圖
-![alt text](./Resource/#28/6.png)<br>
-![alt text](./Resource/#28/7.png)<br>
+![error](./Resource/%2328/6.png)<br>
+![error](./Resource/%2328/7.png)<br>
 在橘色區域，其實我們在過去比對已經會知道那邊有重複，所以直接從needle[2]開始比對即可。<br>
-![alt text](./Resource/#28/8.png)<br>
+![error](./Resource/%2328/8.png)<br>
 
 如果不清楚橘色區域怎麼尋找，可以下面這張圖，這就是"失配函式"所想表達的處理方式<br>
-![alt text](./Resource/#28/9.png)<br>
+![error](./Resource/%2328/9.png)<br>
 
 所以最後才會如下圖，從needle[2]開始比對<br>
-![alt text](./Resource/#28/10.png)<br>
+![error](./Resource/%2328/10.png)<br>
 
 那"失配函式表"要怎麼看才知道會是在2呢，
 i | 0 | 1 | 2 | 3 | 4 | 5 | 6
@@ -85,8 +81,8 @@ F[i] | -1 | 0 | 0 | 0 | 0 | 1 | 2
 至於"失配函式表"製作方式就要認真研究最上方貼的函式囉~<br>
 
 之後一樣，在i=6時比對錯誤，我們找到F[2] = 0，所以下一次要從needle[0]的位置進行比對，如下圖所示<br>
-![alt text](./Resource/#28/11.png)<br>
-![alt text](./Resource/#28/12.png)<br>
+![error](./Resource/%2328/11.png)<br>
+![error](./Resource/%2328/12.png)<br>
 
 最後結果圖如下，完成最後比對，如果有找到就停下，回傳位置在哪，沒有則回傳-1
-![alt text](./Resource/#28/13.png)<br>
+![error](./Resource/%2328/13.png)<br>
