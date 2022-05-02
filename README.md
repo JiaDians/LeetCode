@@ -21,23 +21,7 @@
 
 以下是"失配函式"所需預先建立的表<br>
 
-$$
-f(j)=\left\{ 
-\begin{array}{l}
-  -1 \\ 
-  f^m(j-1)+1 \\ 
-  -1
-\end{array}
-\begin{array}{l}
-  if\ j = 0 \\ 
-  where\ m\ is\ the\ least\ integer\ k\ for\ which\ p_{f^k(j-1)+1}=p_j\\ 
-  if\ there\ is\ no\ k\ satisfying\ the\ above
-\end{array}
-\right.
-$$
-<br>
-
-$$f^1(j)=f(j)\ and\ f^m(j)= f(f^{m-1}(j))$$
+<img src="https://latex.codecogs.com/gif.latex?f^1(j)=f(j)\ and\ f^m(j)= f(f^{m-1}(j))" /> 
 
 範例:<br>
 haystack為主文字串，needle為匹配字串<br>
