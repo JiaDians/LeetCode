@@ -21,7 +21,8 @@
 
 以下是"失配函式"所需預先建立的表<br>
 
-$$f(j)=\left\{ 
+$$
+f(j)=\left\{ 
 \begin{array}{l}
   -1 \\ 
   f^m(j-1)+1 \\ 
@@ -32,8 +33,10 @@ $$f(j)=\left\{
   where\ m\ is\ the\ least\ integer\ k\ for\ which\ p_{f^k(j-1)+1}=p_j\\ 
   if\ there\ is\ no\ k\ satisfying\ the\ above
 \end{array}
-\right. \\$$
+\right.
+$$
 <br>
+
 $$f^1(j)=f(j)\ and\ f^m(j)= f(f^{m-1}(j))$$
 
 範例:<br>
