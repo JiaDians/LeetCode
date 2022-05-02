@@ -20,8 +20,8 @@
 此字串尋找演算法優點在於，欲搜尋的詞在不匹配時本身就包含足夠的資訊來確定下一個匹配可能的開始位置，利用這一特性以避免重新檢查先前配對的字元。<br>
 
 以下是"失配函式"所需預先建立的表<br>
-
-<img src="https://latex.codecogs.com/gif.latex?f^1(j)=f(j)\ and\ f^m(j)= f(f^{m-1}(j))" /> 
+![equation](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D%5Cbg%7Bwhite%7Df(j)=%5Cleft%5C%7B%20%5Cbegin%7Barray%7D%7Bl%7D%20%20-1%20%5C%5C%20%20%20f%5Em(j-1)&plus;1%20%5C%5C%20%20%20-1%5Cend%7Barray%7D%5Cbegin%7Barray%7D%7Bl%7D%20%20if%5C%20j%20=%200%20%5C%5C%20%20%20where%5C%20m%5C%20is%5C%20the%5C%20least%5C%20integer%5C%20k%5C%20for%5C%20which%5C%20p_%7Bf%5Ek(j-1)&plus;1%7D=p_j%5C%5C%20%20%20if%5C%20there%5C%20is%5C%20no%5C%20k%5C%20satisfying%5C%20the%5C%20above%5Cend%7Barray%7D%5Cright.)
+![equation](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D%5Cbg%7Bwhite%7Df%5E1(j)=f(j)%5C%20and%5C%20f%5Em(j)=%20f(f%5E%7Bm-1%7D(j)))
 
 範例:<br>
 haystack為主文字串，needle為匹配字串<br>
